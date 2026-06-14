@@ -1,22 +1,14 @@
 import { duration } from '../utils/duration.js';
 
 function bubbleSort(arr) {
-  let length = arr.length;
-  let swapped;
+  let length = arr.length - 1;
+  let swapped = false;
 
   do {
     swapped = false;
-    for (let i = 0; i < length - 1; i++) {
-      let currentElem = arr[i];
-      let nextElem = arr[i + 1];
-
-      if (currentElem > nextElem) {
-        // arr[i] = nextElem;
-        // arr[i + 1] = currentElem;
-
-        // In-place swap
+    for (let i = 0; i < length; i++) {
+      if (arr[i] > arr[i + 1]) {
         [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
-
         swapped = true;
       }
     }

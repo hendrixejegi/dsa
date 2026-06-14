@@ -6,29 +6,34 @@ import (
 	"math/rand"
 )
 
-// after every iteration the end of the array will always be sorted
-// the outer loop tracks the length of the list removing the sorted part after each iteration
-// the inner loop handle the sorting logic for the unsorted part of the list
+// Each pass places the largest unsorted element at the end of the array,
+// so the sorted portion grows from the back.
+// The outer loop controls how much of the array is still unsorted,
+// shrinking the range after each iteration.
+// The inner loop performs adjacent comparisons within the unsorted range
+// and swaps elements to move larger values toward the end.
+
+// Time Complexity:
+// Worst/Average: O(n^2) (array is in reverse order or unsorted)
+// Best: O(n) when already sorted (optimized with early termination)
+
 func bubbleSort(arr []int) {
-	for i := len(arr); i > 0; i-- {
+	// After each pass, the largest unsorted element is placed at index i,
+	// so we only need to scan up to i-1 on the next pass.
+	for i := len(arr) - 1; i > 0; i-- {
 		swapped := false
 
-		for j := 0; j < i-1; j++ {
-			currentElem := arr[j]
-			nextElem := arr[j+1]
-
-			if currentElem > nextElem {
-				arr[j], arr[j+1] = nextElem, currentElem
+		for j := 0; j < i; j++ {
+			if arr[j] > arr[j+1] {
+				arr[j], arr[j+1] = arr[j+1], arr[j]
 				swapped = true
 			}
 		}
 
 		if !swapped {
-			fmt.Println("Sorted array")
-			break
+			return
 		}
 	}
-
 }
 
 func main() {
