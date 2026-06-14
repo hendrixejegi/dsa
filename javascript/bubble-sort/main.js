@@ -19,9 +19,6 @@ function bubbleSort(arr) {
 
 (function main() {
   const arr = createArr(300);
-
-  duration(() => {
-    bubbleSort(arr);
-    console.log(arr);
-  });
+  duration(() => bubbleSort(arr));
+  console.log(arr);
 })();

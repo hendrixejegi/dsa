@@ -11,7 +11,7 @@ import (
 // shrinking the range after each iteration.
 // The inner loop performs adjacent comparisons within the unsorted range
 // and swaps elements to move larger values toward the end.
-
+//
 // Time Complexity:
 // Worst/Average: O(n^2) (array is in reverse order or unsorted)
 // Best: O(n) when already sorted (optimized with early termination)
@@ -37,9 +37,8 @@ func bubbleSort(arr []int) {
 
 func main() {
 	arr := utils.CreateArr(300)
-
 	utils.Duration(func() {
 		bubbleSort(arr)
-		fmt.Println(arr)
 	})
+	fmt.Println(arr)
 }
