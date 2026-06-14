@@ -1,3 +1,4 @@
+import { createArr } from '../utils/array.js';
 import { duration } from '../utils/duration.js';
 
 function bubbleSort(arr) {
@@ -17,12 +18,7 @@ function bubbleSort(arr) {
 }
 
 (function main() {
-  const arr = [];
-
-  // 300 is the length of the array
-  for (let i = 0; i < 300; i++) {
-    arr[i] = Math.round(Math.random() * 1000);
-  }
+  const arr = createArr(300);
 
   duration(() => {
     bubbleSort(arr);

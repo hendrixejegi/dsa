@@ -3,7 +3,6 @@ package main
 import (
 	"dsa/utils"
 	"fmt"
-	"math/rand"
 )
 
 // Each pass places the largest unsorted element at the end of the array,
@@ -37,11 +36,7 @@ func bubbleSort(arr []int) {
 }
 
 func main() {
-	arr := make([]int, 300)
-
-	for i := range arr {
-		arr[i] = rand.Intn(1000)
-	}
+	arr := utils.CreateArr(300)
 
 	utils.Duration(func() {
 		bubbleSort(arr)
