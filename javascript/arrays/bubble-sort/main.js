@@ -1,5 +1,5 @@
-import { createArr } from '../utils/array.js';
-import { duration } from '../utils/duration.js';
+import { createArr } from '../../utils/array.js';
+import { duration } from '../../utils/duration.js';
 
 function bubbleSort(arr) {
   let length = arr.length - 1;

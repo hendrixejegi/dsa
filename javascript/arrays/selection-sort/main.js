@@ -1,5 +1,5 @@
-import { createArr } from '../utils/array.js';
-import { duration } from '../utils/duration.js';
+import { createArr } from '../../utils/array.js';
+import { duration } from '../../utils/duration.js';
 
 function selectionSort(arr) {
   for (let i = 0; i < arr.length - 1; i++) {

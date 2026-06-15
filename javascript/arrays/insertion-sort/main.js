@@ -1,5 +1,5 @@
-import { createArr } from '../utils/array.js';
-import { duration } from '../utils/duration.js';
+import { createArr } from '../../utils/array.js';
+import { duration } from '../../utils/duration.js';
 
 function insertionSort(arr) {
   if (arr.length < 2) {
